@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24411" systemVersion="24G325" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CalculationHistory" representedClassName=".CalculationHistory" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryString" attributeType="String"/>
+        <attribute name="currencyCode" attributeType="String"/>
+        <attribute name="iconString" attributeType="String"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totalAssets" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="zakatDue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+</model>

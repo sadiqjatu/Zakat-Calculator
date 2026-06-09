@@ -1,0 +1,86 @@
+/* 
+  Localizable.strings
+  ZakatCalculator
+
+  Created by Sadiq Jatu on 18/05/26.
+  
+*/
+
+//Tab bar and naviagation strings
+calculator = "Calculator";
+education  = "Education";
+history    = "History";
+settings   = "Settings";
+calculateYourZakat = "Calculate Your Zakat";
+learnAboutZakat = "Learn About Zakat";
+calculationHistory = "Calculation History";
+wealthSavings = "Wealth & Savings";
+goldSilver    = "Gold & Silver";
+businessAssets = "Business Assets";
+
+//WSCalculator Strings
+cashAtHome   = "Cash at Home";
+bankAccounts = "Bank Accounts";
+savings      = "Savings";
+investments  = "Investments (stocks, bonds)";
+loanedMoney  = "Money Loaned to Others";
+assets       = "Other Liquid Assets";
+totalWealth  = "Total Wealth";
+
+//GSCalculator Strings
+currentPrices = "Current Prices";
+gold          = "Gold";
+goldAmount    = "Gold Amount (grams)";
+goldPricePerGram = "Gold Price per Gram (%@)";
+goldValue     = "Gold Value:";
+
+silver             = "Silver";
+silverAmount       = "Silver Amount (grams)";
+silverPricePerGram = "Silver Price per Gram (%@)";
+silverValue        = "Silver Value:";
+totalValue         = "Total Value";
+
+//BACalculator Strings
+inventoryStock     = "Inventory/Stock";
+cashInBusiness     = "Cash in Business";
+accountsReceivable = "Accounts Receivable";
+rawMaterials       = "Raw Materials";
+finishedGoods      = "Finished Goods";
+totalAssets        = "Total Assets";
+
+//common UI strings
+nisabThreshold = "Nisab Threshold";
+calculateZakat = "Calculate Zakat";
+reset          = "Reset";
+nisabTextInfo  = "This baseline changes dynamically based on daily precious metal market rates. Silver is selected by default as it is recommended by the majority of scholars for cash and mixed financial savings.";
+
+//Education VC
+zakatInfo       = "Learn about the principles and practices of Zakat, one of the five pillars of islam";
+questionOne     = "What is Zakat?";
+questionTwo      = "Who Must Pay Zakat?";
+questionThree    = "Understanding Nisab";
+questionFour     = "Calculation Method";
+questionFive     = "Who Receives Zakat?";
+
+answerOne        = "Zakat is one of the five pillars of Islam and refers to the obligation that an individual has to donate a certain proportion of wealth each year to charitable causes. It is an act of worship and purification that helps those in need.";
+answerTwo        = "Any Muslim who possesses wealth above the Nisab threshold for one lunar year must pay Zakat. The person must have full ownership of the wealth and it must be in excess of their basic needs.";
+answerThree      = "Nisab is the minimum amount of wealth a Muslim must possess before they become obligated to pay Zakat. It is equivalent to 87.48 grams of gold or 612.36 grams of silver, whichever is lower in value.";
+answerFour       = "Zakat is calculated at 2.5% of your total qualifying wealth that has been in your possession for one lunar year. This includes cash, savings, gold, silver, business assets, and investments.";
+answerFive       = "The Quran identifies eight categories of people who are eligible to receive Zakat: the poor, the needy, those employed to collect Zakat, those whose hearts are to be reconciled, captives, debtors, in the cause of Allah, and travelers in need.";
+subtitleLabel    = "Tap to read more";
+
+//Result vc
+aboveNisabThreshold = "You are above Nisab threshold";
+belowNisabThreshold = "You are below the Nisab threshold";
+yourZakatDue = "Your Zakat Due";
+recalculate = "Recalculate";
+done = "Done";
+
+zakatDue         = "Zakat Due";
+historyPlaceholder = "Your calculation history will appear here after you calculate your Zakat";
+noCalculationsYet = "No calculations yet";
+language = "Language";
+currency = "Currency";
+appDescription = "A simple and accurate tool to help you calculate your Zakat obligation according to Islamic principles.";
+version        = "Version 1.0.0";
+appNameText    = "Zakat Calculator";

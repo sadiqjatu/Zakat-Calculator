@@ -1,0 +1,89 @@
+/* 
+  Localizable.strings
+  ZakatCalculator
+
+  Created by Sadiq Jatu on 18/05/26.
+  
+*/
+
+//Tab bar and navigation strings
+calculator = "الحاسبة";
+education  = "التعليم";
+history    = "التاريخ";
+settings   = "الإعدادات";
+calculateYourZakat = "احسب زكاتك";
+learnAboutZakat = "تعلم عن الزكاة";
+calculationHistory = "سجل العمليات الحسابية";
+wealthSavings = "الأموال والمدخرات";
+goldSilver    = "الذهب والفضة";
+businessAssets = "أصول الأعمال";
+
+
+//WSCalculator strings
+cashAtHome   = "النقد في المنزل";
+bankAccounts = "الحسابات المصرفية";
+savings      = "المدخرات";
+investments  = "الاستثمارات (أسهم، سندات)";
+loanedMoney  = "الأموال المقرضة للآخرين";
+assets       = "الأصول السائلة الأخرى";
+totalWealth    = "إجمالي الثروة";
+
+//GSCalculator Strings
+currentPrices = "الأسعار الحالية";
+gold          = "الذهب";
+goldAmount    = "كمية الذهب (غرام)";
+goldPricePerGram = "سعر غرام الذهب (%@)";
+goldValue     = "قيمة الذهب:";
+
+silver             = "الفضة";
+silverAmount       = "كمية الفضة (غرام)";
+silverPricePerGram = "سعر غرام الفضة (%@)";
+silverValue        = "قيمة الفضة:";
+totalValue         = "القيمة الإجمالية";
+
+//BACalculator Strings
+inventoryStock     = "البضائع المخزونة";
+cashInBusiness     = "السيولة النقدية للتجارة";
+accountsReceivable = "الديون المرجو سدادها";
+rawMaterials       = "المواد الخام";
+finishedGoods      = "المنتجات التامة";
+totalAssets        = "إجمالي الأصول";
+
+//Common UI Strings
+nisabThreshold = "حد النصاب";
+calculateZakat = "احسب الزكاة";
+reset          = "إعادة تعيين";
+nisabTextInfo  = "تتغير هذه القيمة الأساسية ديناميكيًا بناءً على أسعار السوق اليومية للمعادن الثمينة. تم اختيار الفضة افتراضيًا لكونها الخيار الموصى به من قِبل أغلبية العلماء للسيولة النقدية والمدخرات المالية المختلطة";
+
+
+//Education VC
+zakatInfo   = "تعرف على مبادئ وأحكام الزكاة، أحد أركان الإسلام الخمسة";
+questionOne   = "ما هي الزكاة؟";
+questionTwo   = "من تجب عليه الزكاة؟";
+questionThree   = "فهم النصاب";
+questionFour   = "طريقة الحساب";
+questionFive   = "من يستحق الزكاة؟";
+
+answerOne   = "الزكاة هي أحد أركان الإسلام الخمسة، وهي فريضة تُلزم الفرد بإخراج نسبة معينة من ثروته كل عام للوجوه الخيرية. وهي عبادة وتزكية للمال وتكافل للمحتاجين.";
+answerTwo   = "تجب الزكاة على كل مسلم يملك مالاً يبلغ النصاب وحال عليه حول قمري كامل (عام هجري). ويشترط أن يكون الملك تاماً للمال وأن يكون زائداً عن الاحتياجات الأساسية.";
+answerThree = "النصاب هو الحد الأدنى من المال الذي يجب أن يملكه المسلم قبل أن تجب عليه الزكاة. ويعادل قيمته 87.48 غراماً من الذهب أو 612.36 غراماً من الفضة، أيهما أقل قيمة.";
+answerFour  = "تُحسب الزكاة بنسبة 2.5% من إجمالي أموالك المؤهلة التي بقيت في حوزتك لمدة عام قمري كامل. ويشمل ذلك النقد، والمدخرات، والذهب، والفضة، والأصول التجارية، والاستثمارات.";
+answerFive  = "حدد القرآن الكريم ثمانية أصناف مستحقة للزكاة (مصارف الزكاة): الفقراء، والمساكين، والعاملين عليها، والمؤلفة قلوبهم، وفي الرقاب، والغارمين، وفي سبيل الله، وابن السبيل.";
+subtitleLabel   = "انقر لقراءة المزيد";
+
+//Result vc strings
+aboveNisabThreshold = "لقد بلغت مالك النصاب";
+belowNisabThreshold = "لم يبلغ مالك النصاب";
+yourZakatDue = "زكاتك المستحقة";
+recalculate = "إعادة الحساب";
+done = "تم";
+
+zakatDue         = "الزكاة المستحقة";
+historyPlaceholder = "سوف يظهر سجل الحسابات الخاص بك هنا بعد حساب زكاتك";
+noCalculationsYet = "لا توجد حسابات بعد";
+language = "اللغة";
+currency = "العملة";
+
+appNameText    = "حاسبة الزكاة";
+version    = "الإصدار 1.0.0";
+appDescription = "أداة بسيطة ودقيقة لمساعدتك في حساب زكاة مالك وفقاً لأحكام الشريعة الإسلامية.";
