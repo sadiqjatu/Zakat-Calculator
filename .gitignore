@@ -1,1 +1,11 @@
+.DS_Store
 Secrets.plist
+
+# Xcode
+build/
+DerivedData/
+
+# User-specific settings
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
