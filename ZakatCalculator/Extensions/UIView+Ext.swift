@@ -9,6 +9,18 @@ import UIKit
 
 extension UIView {
     
+    var firstResponder: UIView? {
+        if isFirstResponder { return self}
+        
+        for subview in subviews {
+            if let responder = subview.firstResponder {
+                return responder
+            }
+        }
+        
+        return nil
+    }
+    
     func pinToEdges(of superview: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         

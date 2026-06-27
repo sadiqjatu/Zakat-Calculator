@@ -331,6 +331,8 @@ class BACalculator: UIViewController {
             name: LocalizationManager.currencyChangedNotification,
             object: nil
         )
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -358,5 +360,37 @@ class BACalculator: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo      = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        var keyboardHeight      = keyboardFrame.cgRectValue.height
+        
+        var contentInsets       = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+        if let activeTextField = self.view.firstResponder as? UITextField {
+            var rect = activeTextField.frame
+            rect.size.height += 20
+            
+            scrollView.scrollRectToVisible(rect, animated: true)
+        }
+        
+    }
+    
+    
+    @objc func keyboardWillHide() {
+        let contentInsets                = UIEdgeInsets.zero
+        scrollView.contentInset          = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
