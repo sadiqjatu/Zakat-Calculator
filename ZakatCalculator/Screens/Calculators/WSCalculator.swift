@@ -371,7 +371,9 @@ class WSCalculator: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
         
         if let activeTextField = self.view.firstResponder as? UITextField {
-            var rect = activeTextField.frame
+            let convertedFrame = scrollView.convert(activeTextField.bounds, from: activeTextField)
+            
+            var rect = convertedFrame
             rect.size.height += 20
             
             scrollView.scrollRectToVisible(rect, animated: true)

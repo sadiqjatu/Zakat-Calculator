@@ -367,15 +367,17 @@ class BACalculator: UIViewController {
         guard let userInfo      = notification.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
-        var keyboardHeight      = keyboardFrame.cgRectValue.height
+        let keyboardHeight      = keyboardFrame.cgRectValue.height
         
-        var contentInsets       = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        let contentInsets       = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
         
         if let activeTextField = self.view.firstResponder as? UITextField {
-            var rect = activeTextField.frame
-            rect.size.height += 20
+            let convertedFrame = scrollView.convert(activeTextField.bounds, from: activeTextField)
+            
+            var rect           = convertedFrame
+            rect.size.height  += 20
             
             scrollView.scrollRectToVisible(rect, animated: true)
         }
