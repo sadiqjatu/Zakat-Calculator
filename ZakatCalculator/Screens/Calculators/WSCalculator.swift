@@ -342,19 +342,21 @@ class WSCalculator: UIViewController {
         NetworkManager.shared.getMetalRates { [weak self] result in
             guard let self = self else { return }
             
-            switch result {
-            case .success(let metalData):
-                self.currentCurrency = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "USD"
-                let currentCurrencyValue = metalData.data.currencyRates[self.currentCurrency]!
-                
-                let calculateNisab  = 612.36 * metalData.data.metalPrices.XAG.price * currentCurrencyValue
-                self.nisabThreshold = calculateNisab
-                
-                DispatchQueue.main.async {
-                    self.configureUIElements()
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let metalData):
+                    self.currentCurrency = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "USD"
+                    let currentCurrencyValue = metalData.data.currencyRates[self.currentCurrency] ?? 1.0
+                    
+                    let calculateNisab  = 612.36 * metalData.data.metalPrices.XAG.price * currentCurrencyValue
+                    self.nisabThreshold = calculateNisab
+                    
+                    DispatchQueue.main.async {
+                        self.configureUIElements()
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
             }
         }
     }

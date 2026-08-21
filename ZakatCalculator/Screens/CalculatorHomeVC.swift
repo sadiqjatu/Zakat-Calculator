@@ -47,19 +47,21 @@ class CalculatorHomeVC: UIViewController {
         NetworkManager.shared.getMetalRates { [weak self] result in
             guard let self = self else { return }
             
-            switch result {
-            case .success(let metalData):
-                let currentCurrency = UserDefaults.standard.string(forKey: "selectedCurrency")
-                let currentCurrencyValue = metalData.data.currencyRates[currentCurrency ?? "USD"]!
-                
-                let calculateNisab       = 612.36 * metalData.data.metalPrices.XAG.price * currentCurrencyValue
-                self.nisabThreshold      = calculateNisab
-                
-                self.goldPrice           = metalData.data.metalPrices.XAU.price * currentCurrencyValue
-                self.silverPrice         = metalData.data.metalPrices.XAG.price * currentCurrencyValue
-                
-            case .failure(let error):
-                print(error)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let metalData):
+                    let currentCurrency = UserDefaults.standard.string(forKey: "selectedCurrency")
+                    let currentCurrencyValue = metalData.data.currencyRates[currentCurrency ?? "USD"] ?? 1.0
+                    
+                    let calculateNisab       = 612.36 * metalData.data.metalPrices.XAG.price * currentCurrencyValue
+                    self.nisabThreshold      = calculateNisab
+                    
+                    self.goldPrice           = metalData.data.metalPrices.XAU.price * currentCurrencyValue
+                    self.silverPrice         = metalData.data.metalPrices.XAG.price * currentCurrencyValue
+                    
+                case .failure(let error):
+                    print("Failed to fetch rates: \(error)")
+                }
             }
         }
     }

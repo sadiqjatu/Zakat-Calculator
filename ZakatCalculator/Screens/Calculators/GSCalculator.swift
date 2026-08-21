@@ -430,16 +430,18 @@ class GSCalculator: UIViewController {
     
     
     @objc func refetchMetalData() {
-        NetworkManager.shared.getMetalRates { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
+        DispatchQueue.main.async {
+            NetworkManager.shared.getMetalRates { [weak self] result in
+                guard let self = self else { return }
                 
-            case .success(let metalData):
-                self.goldPriceTextField.text   = "\(metalData.data.metalPrices.XAU.price)"
-                self.silverPriceTextField.text = "\(metalData.data.metalPrices.XAG.price)"
-            case .failure(_):
-                print("DEBUG: error fetching metal values")
+                switch result {
+                    
+                case .success(let metalData):
+                    self.goldPriceTextField.text   = "\(metalData.data.metalPrices.XAU.price)"
+                    self.silverPriceTextField.text = "\(metalData.data.metalPrices.XAG.price)"
+                case .failure(let error):
+                    print("DEBUG: error fetching metal values: \(error)")
+                }
             }
         }
     }
@@ -488,21 +490,23 @@ class GSCalculator: UIViewController {
         NetworkManager.shared.getMetalRates { [weak self] result in
             guard let self = self else { return }
             
-            switch result {
-            case .success(let metalData):
-                self.currentCurrency     = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "USD"
-                let currentCurrencyValue = metalData.data.currencyRates[currentCurrency]!
-                
-                self.nisabThreshold      = 612.36 * metalData.data.metalPrices.XAG.price * currentCurrencyValue
-                
-                self.goldPrice           = metalData.data.metalPrices.XAU.price * currentCurrencyValue
-                self.silverPrice         = metalData.data.metalPrices.XAG.price * currentCurrencyValue
-                
-                DispatchQueue.main.async {
-                    self.configureUIElements()
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let metalData):
+                    self.currentCurrency     = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "USD"
+                    let currentCurrencyValue = metalData.data.currencyRates[self.currentCurrency] ?? 1.0
+                    
+                    self.nisabThreshold      = 612.36 * metalData.data.metalPrices.XAG.price * currentCurrencyValue
+                    
+                    self.goldPrice           = metalData.data.metalPrices.XAU.price * currentCurrencyValue
+                    self.silverPrice         = metalData.data.metalPrices.XAG.price * currentCurrencyValue
+                    
+                    DispatchQueue.main.async {
+                        self.configureUIElements()
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
             }
         }
     }
